@@ -200,7 +200,7 @@ function( dF
     #dF2 <- cbind(dFlookupCodes[matchPosnsInLookup,],dF)    
     #the other way around to before, i.e. joining data onto map
     
-    mapWithData@data <- cbind(mapWithData@data, dF[matchPosnsInUserData,])
+    mapWithData@data <- as.data.frame(cbind(mapWithData@data, dF[matchPosnsInUserData,]))
 
     #test colouring map by region & subregion seems to show order has been retained
     #plot(mapWithData,col=mapWithData@data$REGION)
