@@ -211,7 +211,7 @@
 
     #6/2/13 to avoid having the join column repeated
     dF2 <- dF[,-which(names(dF)==nameJoinColumnData), drop=FALSE] #drop=FALSE stops it from converting from dF if just 1 column
-    mapWithData@data <- cbind(mapWithData@data, dF2[matchPosnsInUserData,,drop=FALSE], deparse.level = 0) #deparse stops R creating new column label when just 1 column    
+    mapWithData@data <- as.data.frame(cbind(mapWithData@data, dF2[matchPosnsInUserData,,drop=FALSE], deparse.level = 0)) #deparse stops R creating new column label when just 1 column    
     
 
     #test colouring map by region & subregion seems to show order has been retained
